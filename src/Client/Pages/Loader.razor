@@ -1,0 +1,27 @@
+@page "/loader"
+@inject IJSRuntime JSRuntime;
+
+<h1>File Loader</h1>
+
+<input type="file" id="file" /><button class="btn btn-primary" @onclick=ReadFile>Read file</button>
+
+<p>
+@name
+</p>
+
+@code {
+
+    private string name = "Ready";
+    private async Task ReadFile()
+    {
+        var dotNetReference = DotNetObjectReference.Create(this);
+        await JSRuntime.InvokeVoidAsync("processFile", dotNetReference, "#file");
+    }
+
+    [JSInvokable("ProcessFileResult")]
+    public void ProcessFileResult(string data)
+    {
+        name  = data;
+    }
+
+}
