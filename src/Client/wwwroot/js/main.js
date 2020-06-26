@@ -9,7 +9,7 @@ window.processFile = (dotNetObject, input) => {
         console.log(reader);
         var dataURL = reader.result;
 
-        var output = {name: file.name, type: file.type, size: file.size, url: dataURL};
+        var output = { name: file.name, type: file.type, size: file.size, dataURL: dataURL};
         dotNetObject.invokeMethodAsync('ProcessFileResult', JSON.stringify(output));
         console.log(output);
         console.log(dotNetObject);

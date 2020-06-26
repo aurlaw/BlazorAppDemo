@@ -1,4 +1,6 @@
 @page "/loader"
+@using System.Text.Json;
+@using BlazorAppDemo.Shared;
 @inject IJSRuntime JSRuntime;
 
 <h1>File Loader</h1>
@@ -6,12 +8,14 @@
 <input type="file" id="file" /><button class="btn btn-primary" @onclick=ReadFile>Read file</button>
 
 <p>
-@name
+@name | @type | @size
 </p>
 
 @code {
 
     private string name = "Ready";
+    private string type = string.Empty;
+    private long size = 0;
     private async Task ReadFile()
     {
         var dotNetReference = DotNetObjectReference.Create(this);
@@ -21,7 +25,10 @@
     [JSInvokable("ProcessFileResult")]
     public void ProcessFileResult(string data)
     {
-        name  = data;
+        var info = JsonSerializer.Deserialize<FileData>(data);
+        name  = info.Name;
+        type = info.Type;
+        size = info.Size;
     }
 
 }
