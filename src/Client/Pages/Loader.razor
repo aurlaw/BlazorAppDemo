@@ -1,34 +1,17 @@
 @page "/loader"
-@using System.Text.Json;
-@using BlazorAppDemo.Shared;
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@attribute [Authorize]
+
 @inject IJSRuntime JSRuntime;
+@inject HttpClient Http
+
 
 <h1>File Loader</h1>
 
 <input type="file" id="file" /><button class="btn btn-primary" @onclick=ReadFile>Read file</button>
 
-<p>
-@name | @type | @size
-</p>
-
-@code {
-
-    private string name = "Ready";
-    private string type = string.Empty;
-    private long size = 0;
-    private async Task ReadFile()
-    {
-        var dotNetReference = DotNetObjectReference.Create(this);
-        await JSRuntime.InvokeVoidAsync("processFile", dotNetReference, "#file");
-    }
-
-    [JSInvokable("ProcessFileResult")]
-    public void ProcessFileResult(string data)
-    {
-        var info = JsonSerializer.Deserialize<FileData>(data);
-        name  = info.Name;
-        type = info.Type;
-        size = info.Size;
-    }
-
+@if(isLoaded)
+{
+    <FileDataDisplay Data="@fileData"/>
 }

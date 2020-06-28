@@ -12,6 +12,8 @@ namespace BlazorAppDemo.Shared
         public long Size { get; set; }
         [JsonPropertyName("dataURL")]
         public string DataUrl { get; set; }
+
+        public bool IsImage => Type != null && (Type.Contains("png") || Type.Contains("gif") || Type.Contains("jpg") || Type.Contains("jpeg"));
     }
 }
 

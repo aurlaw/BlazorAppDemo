@@ -1,0 +1,20 @@
+@using BlazorAppDemo.Shared;
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Data.Name </h5>
+        <p class="card-text">Type: @Data.Type  | Size: @Data.Size</p>
+    </div>
+    @if(Data.IsImage)
+    {
+        <img class="card-img-bottom" src="@Data.DataUrl" alt="Card image cap">
+    } else {
+        <p>
+            @Data.DataUrl
+        </p>
+    }
+</div>
+
+@code{
+    [Parameter] public FileData Data {get;set;}
+}    
