@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppDemo.Server", "Server\BlazorAppDemo.Server.csproj", "{77A2C973-096F-456F-860E-B67348BEAFA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppDemo.Server", "Server\BlazorAppDemo.Server.csproj", "{77A2C973-096F-456F-860E-B67348BEAFA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppDemo.Client", "Client\BlazorAppDemo.Client.csproj", "{ECDC1333-50AE-452B-8592-5F063C5EBBCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppDemo.Client", "Client\BlazorAppDemo.Client.csproj", "{ECDC1333-50AE-452B-8592-5F063C5EBBCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppDemo.Shared", "Shared\BlazorAppDemo.Shared.csproj", "{2963D243-4E89-45F8-9B6E-C7EC26FBB2FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppDemo.Shared", "Shared\BlazorAppDemo.Shared.csproj", "{2963D243-4E89-45F8-9B6E-C7EC26FBB2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClientComponent", "BlazorClientComponent\BlazorClientComponent.csproj", "{9218A5E7-A242-404F-BCCB-495854CB427F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2963D243-4E89-45F8-9B6E-C7EC26FBB2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2963D243-4E89-45F8-9B6E-C7EC26FBB2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2963D243-4E89-45F8-9B6E-C7EC26FBB2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9218A5E7-A242-404F-BCCB-495854CB427F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9218A5E7-A242-404F-BCCB-495854CB427F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9218A5E7-A242-404F-BCCB-495854CB427F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9218A5E7-A242-404F-BCCB-495854CB427F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
